@@ -16,11 +16,14 @@ public class Launcher : MonoBehaviour
     void Start()
     {
     }
-    private void Update()
+    private void FixedUpdate()
     {
         _simPhys.ProjectorySim(_box, transform.position, transform.forward * _power);
+    }
+    private void Update()
+    {
 
-       if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
                var SpawnedBox = Instantiate(_box, transform.position, transform.rotation);
                SpawnedBox.transform.parent = SpawnedBox.transform.root;

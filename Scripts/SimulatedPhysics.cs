@@ -8,7 +8,13 @@ public class SimulatedPhysics : MonoBehaviour
     private PhysicsScene _physScene;
     [SerializeField]
     private Transform _labParent;
-    
+
+    [SerializeField]
+    private LineRenderer _lineRend;
+    [SerializeField]
+    private int _maxPhysIteration;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,8 +45,18 @@ public class SimulatedPhysics : MonoBehaviour
     public void ProjectorySim(AirLaunchPackage prefab, Vector3 pos, Vector3 velocity)
     {
         var SimObj = Instantiate(prefab, pos, Quaternion.identity);
-      //  SimObj.GetComponent<Renderer>().enabled = false;
+        SimObj.GetComponent<Renderer>().enabled = false;
         SceneManager.MoveGameObjectToScene(SimObj.gameObject, _SimScene);
-        SimObj.Initialize(transform.forward * 5);
+        SimObj.Initialize(velocity);
+
+        _lineRend.positionCount = _maxPhysIteration;
+
+        for (int i = 0; i < _maxPhysIteration; i++)
+        {
+            _physScene.Simulate(Time.fixedDeltaTime * 4);
+            _lineRend.SetPosition(i, SimObj.transform.position);
+        }
+
+        Destroy(SimObj.gameObject);
     }
 }
