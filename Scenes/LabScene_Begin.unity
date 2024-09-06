@@ -12865,6 +12865,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 8512b22512b8c43378d97167bc140ba0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1666079389}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 8512b22512b8c43378d97167bc140ba0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1666079390}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 8512b22512b8c43378d97167bc140ba0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1666079393}
   m_SourcePrefab: {fileID: 100100000, guid: 8512b22512b8c43378d97167bc140ba0, type: 3}
 --- !u!4 &280725069 stripped
 Transform:
@@ -56888,6 +56894,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!75 &1666079390
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666079383}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
+--- !u!114 &1666079393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666079383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce74a7eca48f46458156c8cc2257c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customForce: 10
 --- !u!1 &1667848575 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 3ad715f5f359e455e913327fe680bb76, type: 3}
@@ -57133,7 +57164,7 @@ Transform:
   m_GameObject: {fileID: 1671592877}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.99880123, z: -0, w: -0.048949737}
-  m_LocalPosition: {x: 7.41, y: 1.7, z: -5.24}
+  m_LocalPosition: {x: -7.07, y: 1.7, z: -3.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75418,7 +75449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _labParent: {fileID: 1465259519}
   _lineRend: {fileID: 2032372376}
-  _maxPhysIteration: 100
+  _maxPhysIteration: 20
 --- !u!120 &2032372376
 LineRenderer:
   serializedVersion: 2
