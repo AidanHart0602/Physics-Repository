@@ -10,7 +10,7 @@ public class Gravity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Physics.gravity = new Vector3(0, -1, 0);
+      //  Physics.gravity = new Vector3(0, -1, 0);
     }
 
     // Update is called once per frame
